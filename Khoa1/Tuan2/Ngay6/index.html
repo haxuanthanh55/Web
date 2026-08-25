@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đăng ký Khóa học</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hệ thống Quản lý Ghi danh</h1>
+        <nav>
+            <ul>
+                <li><a href="#danh-sach">Hồ sơ Học viên</a></li>
+                <li><a href="#dang-ky">Ghi danh mới</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="danh-sach">
+            <h2>Danh sách Ghi danh (CSS Grid)</h2>
+            <div class="grid-container">
+                <div class="student-card paid">
+                    <h3>HV001 - Nguyễn Văn A</h3>
+                    <p>Khóa học: Lập trình Web Fullstack</p>
+                    <p>Học phí: 5,000,000đ</p>
+                    <p class="status">Trạng thái: Đã thanh toán</p>
+                </div>
+                <div class="student-card unpaid">
+                    <h3>HV002 - Trần Thị B</h3>
+                    <p>Khóa học: Phân tích Dữ liệu</p>
+                    <p>Học phí: 4,500,000đ</p>
+                    <p class="status">Trạng thái: Chưa đóng phí</p>
+                </div>
+                <div class="student-card paid">
+                    <h3>HV003 - Lê Văn C</h3>
+                    <p>Khóa học: Lập trình Web Fullstack</p>
+                    <p>Học phí: 5,000,000đ</p>
+                    <p class="status">Trạng thái: Đã thanh toán</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dang-ky">
+            <h2>Tạo phiếu Ghi danh</h2>
+            <form>
+                <label for="ma-hv">Mã Học viên:</label>
+                <input type="text" id="ma-hv" required>
+
+                <label for="ten-hv">Họ và tên:</label>
+                <input type="text" id="ten-hv" required>
+
+                <label for="khoa-hoc">Khóa học đăng ký:</label>
+                <select id="khoa-hoc">
+                    <option value="web">Lập trình Web Fullstack</option>
+                    <option value="data">Phân tích Dữ liệu</option>
+                    <option value="mobile">Lập trình Mobile</option>
+                </select>
+
+                <label for="hoc-phi">Mức học phí (VNĐ):</label>
+                <input type="number" id="hoc-phi" min="0" required>
+
+                <label class="checkbox-label">
+                    <input type="checkbox"> Học viên đã hoàn tất chuyển khoản
+                </label>
+
+                <button type="button">Xác nhận Ghi danh</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Trung tâm Đào tạo. Hệ thống quản lý nội bộ.</p>
+    </footer>
+
+    <script type="module" src="./test.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Dịch vụ Khách sạn</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .done { text-decoration: line-through; color: #28a745; }
+        .btn-done, .btn-cancel { margin-left: 10px; cursor: pointer; }
+        li { margin-bottom: 8px; }
+        #service-error { color: red; font-size: 14px; font-style: italic; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <h3>Thêm Yêu Cầu Dịch Vụ Mới</h3>
+    
+    <!-- LỚP VỎ (Ngày 1, 2, 3) -->
+    <form id="service-form">
+        <input type="text" id="service-name" placeholder="VD: Dọn phòng 204">
+        <button type="submit">Ghi nhận</button>
+        <div id="service-error"></div> <!-- Thẻ báo lỗi -->
+    </form>
+
+    <h3>Danh sách Yêu cầu đang xử lý</h3>
+    <ul id="service-list"></ul>
+
+    <!-- Nhúng file JS bên ngoài vào -->
+    <script src="script.js"></script>
+</body>
+</html>

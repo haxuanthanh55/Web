@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form-san-pham">
+  <input type="text" id="ten-sp" placeholder="Tên sản phẩm" required>
+  <input type="number" id="gia-sp" placeholder="Giá tiền" required>
+  <button type="submit">Thêm vào giỏ</button>
+</form>
+
+<!-- Thẻ ul đóng vai trò là danh sách cha -->
+<ul id="danh-sach-sp"></ul>
+
+<template id="khuon-sp">
+  <li class="item-sp">
+    <strong class="ten"></strong> - <span class="gia"></span> VNĐ
+    <button class="btn-xoa" type="button">Xóa</button>
+  </li>
+</template>
+<script src="./src/main.js"></script>
+</body>
+</html>

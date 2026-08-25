@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phòng khám - Quản lý Bệnh nhân</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Danh sách Bệnh nhân</h2>
+
+    <div class="tim-kiem">
+      <input type="text" id="o-tim-kiem" placeholder="🔍 Nhập tên bệnh nhân cần tìm...">
+    </div>
+
+    <form id="form-benh-nhan">
+      <input type="text" id="ten-bn" placeholder="Họ và tên bệnh nhân mới" required>
+      <button type="submit">Thêm Bệnh nhân</button>
+    </form>
+
+    <ul id="danh-sach"></ul>
+  </div>
+
+  <template id="khuon">
+    <li><strong class="ten-hien-thi"></strong></li>
+  </template>
+
+  <!-- Nhớ: type="module" mới chạy được import/export -->
+  <script type="module"src="./src/main.js"></script>
+</body>
+</html>

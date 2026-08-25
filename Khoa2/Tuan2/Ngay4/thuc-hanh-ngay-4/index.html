@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form-task">
+  <input type="text" id="ten-task" placeholder="Ví dụ: Làm API Đăng nhập..." required>
+  <button type="submit" id="btn-luu">Thêm Task</button>
+</form>
+
+<ul id="danh-sach-task"></ul>
+
+<template id="khuon-task">
+  <li class="item-task">
+    <span class="noi-dung"></span>
+    <button class="btn-sua" type="button">Sửa Task</button>
+    <button class="btn-xoa" type="button">Xong (Xóa)</button>
+  </li>
+</template>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Phòng Khám</title>
+    
+    <!-- Nhúng file CSS vào đây -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h3>Đăng ký Khám bệnh</h3>
+    <form id="patient-form">
+        <input type="text" id="patient-name" placeholder="Nhập tên bệnh nhân...">
+        <button type="submit">Đăng ký</button>
+        <div id="patient-error" class="alert-text"></div>
+    </form>
+
+    <h3>Danh sách chờ khám</h3>
+    <ul id="waiting-list">
+        <!-- Mẫu 1 bệnh nhân hợp lệ -->
+        <li>
+            <span>Lê Văn C</span>
+            <button class="btn-examined">Khám xong</button>
+            <button class="btn-cancel">Hủy</button>
+        </li>
+    </ul>
+    
+    <!-- Nhúng file JS -->
+    <script src="script.js"></script>
+</body>
+</html>

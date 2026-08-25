@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng kí khoá học</title>
+</head>
+<body>
+    <header>
+        <h1>ĐĂNG KÍ KHOÁ HỌC</h1>
+    </header>
+    <main>
+        <form action="#">
+            <section>
+                <h3>Thông tin cơ bản</h3>
+                <div>
+                    <label for="ho_ten"><strong>Họ và tên: </strong></label>
+                    <input type="text" id="ho_ten" name="ho_ten" required>
+                </div>
+                <div>
+                    <label for="email"><strong>Email: </strong></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </section>
+            <section>
+                <h3>Thông tin lựa chọn</h3>
+                <div>
+                    <label for="gioi_tinh"><strong>Giới tính: </strong></label>
+                    <input type="radio" value="nam" name="gioi_tinh" id="nam">
+                    <label for="nam">Nam</label>
+                    <input type="radio" value="nu" name="gioi_tinh" id="nu">
+                    <label for="nu">Nữ</label>
+                </div>
+                <div>
+                    <label for="cong_nghe"><strong>Công nghệ quan tâm: </strong></label>
+                    <select name="cong_nghe" id="cong_nghe">
+                        <option value="React">React</option>
+                        <option value="Laravel">Laravel</option>
+                        <option value="PowerBI">Power BI</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="kien_thuc"><strong>Kiến thức đã biết: </strong></label>
+                    <div>
+                        <input type="checkbox" id="database" value="database" name="kien_thuc">
+                        <label for="database">Thiết kế Database</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sql" value="sql" name="kien_thuc">
+                        <label for="sql">SQL</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="html" value="html" name="kien_thuc">
+                        <label for="html">HTML</label>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>Thông tin bổ sung</h3>
+                <div>
+                    <label for="muc_tieu"><strong>Mục tiêu khoá học:</strong> </label>
+                    <div>
+                        <textarea name="muc_tieu" id="muc_tieu" rows="4" cols="30"></textarea>
+                    </div>
+                </div>
+                <input type="submit" value="Xác nhận đăng kí">
+
+            </section>
+        </form>
+    </main>
+    <footer>
+    <h5><em>Người thực hiện: Hà Xuân Thành</em></h5>
+    </footer>
+</body>
+</html>

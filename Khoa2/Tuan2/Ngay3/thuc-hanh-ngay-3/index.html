@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký Khám bệnh</title>
+</head>
+<body>
+  <h2>Đăng ký Bệnh nhân Mới</h2>
+  
+  <form id="form-dang-ky">
+    <!-- Nhóm nhập Tên -->
+    <div style="margin-bottom: 10px;">
+      <input type="text" id="ten-bn" placeholder="Họ và tên bệnh nhân">
+      <div class="loi-msg" id="loi-ten" style="color: red; font-size: 13px;"></div>
+    </div>
+
+    <!-- Nhóm nhập Tuổi -->
+    <div style="margin-bottom: 10px;">
+      <input type="number" id="tuoi-bn" placeholder="Tuổi (1-120)">
+      <div class="loi-msg" id="loi-tuoi" style="color: red; font-size: 13px;"></div>
+    </div>
+
+    <button type="submit">Đăng ký ngay</button>
+  </form>
+
+  <hr>
+  <h3>Danh sách chờ khám</h3>
+  <ul id="danh-sach-kham"></ul>
+
+  <!-- Khuôn đúc -->
+  <template id="khuon-bn">
+    <li class="item-bn">
+      <strong class="ten-hien-thi"></strong> - <span class="tuoi-hien-thi"></span> tuổi
+    </li>
+  </template>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

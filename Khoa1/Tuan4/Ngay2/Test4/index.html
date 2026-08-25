@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu Hồ sơ Bệnh nhân</title>
+</head>
+<body>
+
+    <h2>HỆ THỐNG TRA CỨU BỆNH ÁN PHÒNG KHÁM</h2>
+
+    <div>
+        <input type="text" id="inputTimKiem" placeholder="Nhập tên bệnh nhân...">
+
+        <select id="selectChuyenKhoa">
+            <option value="TatCa">-- Tất cả chuyên khoa --</option>
+            <option value="Nội khoa">Nội khoa</option>
+            <option value="Ngoại khoa">Ngoại khoa</option>
+            <option value="Răng Hàm Mặt">Răng Hàm Mặt</option>
+        </select>
+
+        <select id="selectSapXep">
+            <option value="tangDan">Năm sinh: Nhỏ -> Lớn</option>
+            <option value="giamDan">Năm sinh: Lớn -> Nhỏ</option>
+        </select>
+    </div>
+
+    <hr>
+
+    <div id="hienThiKetQua"></div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

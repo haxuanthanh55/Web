@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành ngày 2</title>
+</head>
+<body>
+    <header>
+        <h1>Thực hành ngày 2</h1>
+    </header>
+    <section>
+        <div>
+            <h2>Tính năm sinh</h2>
+            <label for="">Nhập năm sinh</label>
+            <input type="number" id="namsinh">
+            <button onclick="nam()">Xác nhận</button>
+            <p id="xacnhan"></p>
+        </div>
+        <div>
+            <h2>Tính điểm trung bình</h2>
+            <label for="">Nhập điểm toán:</label>
+            <input type="number" id="toan">
+            <label for="">Nhập điểm văn:</label>
+            <input type="number" id="van">
+            <label for="">Nhập điểm anh:</label>
+            <input type="number" id="anh">
+            <button onclick="diemtb()">Tính trung bình</button>
+            <p id="diemtb"></p>
+        </div>
+        <div>
+            <h2>Khai báo thông tin</h2>
+            <label for="">Nhập tên:</label>
+            <input type="text" id="ten">
+            <label for="type">Chọn loại phòng</label>
+            <select name="type" id="type">
+                <option value="normal">Normal</option>
+                <option value="deluxe">Deluxe</option>
+                <option value="lux">Lux</option>
+            </select>
+            <label for="">Nhập số đêm:</label>
+            <input type="number" id="count">
+            <button onclick="thongtin()">Xác nhận</button>
+            <p id="xacnhan2"></p>
+        </div>
+        <div>
+            <h2>Dãy từ 1 đến n</h2>
+            <label for="">Nhập n: </label>
+            <input type="number" id="n">
+            <button onclick="nhapn()">Xác nhận</button>
+            <p id="ketquaN"></p>
+        </div>
+        <div>
+            <h2>Tính tổng n số</h2>
+            <label for="">Nhập n: </label>
+            <input type="number" id="nn">
+            <button onclick="tongn()">Xác nhận</button>
+            <p id="tinhtongn"></p>
+        </div>
+        <div>
+            <h2>Kiểm tra năm nhuận</h2>
+            <label>Nhập năm:</label> <input type="number" id="namnhuan">
+            <button onclick="kiemTraNhuan()">Kiểm tra</button>
+            <p id="ketquaNhuan"></p>
+        </div>
+
+        <div>
+            <h2>Tìm số lớn nhất</h2>
+            <label>Số 1:</label> <input type="number" id="so1">
+            <label>Số 2:</label> <input type="number" id="so2">
+            <label>Số 3:</label> <input type="number" id="so3">
+            <button onclick="timSoMax()">Tìm Max</button>
+            <p id="ketquaMax"></p>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

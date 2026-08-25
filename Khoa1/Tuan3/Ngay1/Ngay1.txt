@@ -1,0 +1,5 @@
+-textContent: lấy dòng text thuần tuý, ko quan trọng bị nn hay ko, tốc độ xử lý nhanh nhất
+
+-innerText: tương tự textContent nhưng HTML hiện dòng nào lấy dòng nấy
+
+-innerHTML: lấy các thuộc tính của HTML, ví dụ chữ in đậm thì lấy in đậm

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký khóa học</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">KHÓA HỌC IT</div>
+            <ul>
+                <li><a href="#thong-tin">Thông tin</a></li>
+                <li><a href="#dang-ky">Đăng ký</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="thong-tin" class="section1">
+            <h1>THÔNG TIN KHÓA HỌC</h1>
+            <p>Khóa học thiết kế web cơ bản đến nâng cao cho người mới.</p>
+            <img src="anh.png" alt="Ảnh Khóa Học" class="info-banner">
+            <ul class="info-list">
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            <table>
+                <tr>
+                    <th>Hình thức</th>
+                    <th>Học phí</th>
+                </tr>
+                <tr>
+                    <td>Online qua Zoom</td>
+                    <td>Miễn phí</td>
+                </tr>
+            </table>
+        </section>
+        <section id="dang-ky" class="section2">
+            <h2>Biểu Mẫu Đăng Ký</h2>
+            <form action="#">
+                
+                <!-- 1. Text -->
+                <label for="ho-ten">Họ và tên:</label>
+                <input type="text" id="ho-ten" name="ho-ten" placeholder="Nhập họ tên" required>
+
+                <!-- 2. Email -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email" required>
+
+                <!-- 3. Radio -->
+                <label>Giới tính:</label>
+                <div class="flex-group">
+                    <input type="radio" id="nam" name="gioi-tinh" value="nam">
+                    <label for="nam" class="normal-label">Nam</label>
+                    <input type="radio" id="nu" name="gioi-tinh" value="nu">
+                    <label for="nu" class="normal-label">Nữ</label>
+                </div>
+
+                <!-- 4. Select -->
+                <label for="khoa-hoc">Chọn khóa học:</label>
+                <select id="khoa-hoc" name="khoa-hoc">
+                    <option value="">-- Chọn khóa học --</option>
+                    <option value="htmlcss">HTML & CSS</option>
+                    <option value="js">JavaScript</option>
+                </select>
+
+                <!-- 5. Checkbox -->
+                <label>Kiến thức đã biết:</label>
+                <div class="flex-group">
+                    <input type="checkbox" id="skill-html" name="skills" value="htmlcss">
+                    <label for="skill-html" class="normal-label">HTML & CSS</label>
+                    
+                    <input type="checkbox" id="skill-js" name="skills" value="js">
+                    <label for="skill-js" class="normal-label">JavaScript</label>
+                </div>
+
+                <!-- 6. Textarea -->
+                <label for="muc-tieu">Mục tiêu khóa học:</label>
+                <textarea id="muc-tieu" name="muc-tieu" rows="4" placeholder="Bạn muốn đạt được gì sau khóa học?"></textarea>
+
+                <button type="submit">Xác nhận đăng ký</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Sản phẩm tuần 1.</p>
+
+    </footer>
+</body>
+</html>

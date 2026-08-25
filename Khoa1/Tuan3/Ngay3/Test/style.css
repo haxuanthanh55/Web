@@ -1,0 +1,59 @@
+/* =========================================
+   GIAO DIỆN QUẢN LÝ PHÒNG KHÁM
+   ========================================= */
+
+/* Trạng thái thông báo lỗi mặc định (Ẩn) */
+.alert-text { 
+    color: #dc3545; 
+    display: none; 
+    font-style: italic; 
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Class này dùng để JS bật lên khi có lỗi */
+.show { 
+    display: block; 
+}
+
+/* =========================================
+   TRẠNG THÁI DANH SÁCH
+   ========================================= */
+
+/* Trạng thái khám xong (Gạch ngang chữ) */
+.examined { 
+    text-decoration: line-through; 
+    color: gray; 
+    opacity: 0.7;
+}
+
+/* =========================================
+LÀM ĐẸP GIAO DIỆN CƠ BẢN (Tùy chọn thêm)
+   ========================================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#patient-form {
+    margin-bottom: 20px;
+}
+
+ul#waiting-list {
+    list-style-type: none; /* Bỏ dấu chấm tròn của list */
+    padding: 0;
+}
+
+ul#waiting-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Căn lề cho các nút bấm cho đẹp */
+button {
+    margin-left: 5px;
+    cursor: pointer;
+}

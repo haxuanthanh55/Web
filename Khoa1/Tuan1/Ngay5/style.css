@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f7f6;
+    overflow-x: hidden;
+}
+
+/* --- HEADER & NAV --- */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+/* --- MAIN & SECTIONS --- */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section1 {
+    background-color: #e9ecef;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.info-list {
+    margin: 15px 0;
+    list-style: inside; 
+    padding: 0;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto 0;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* --- FORM ĐĂNG KÝ --- */
+.section2 {
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ddd;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section2 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.flex-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="text"], 
+input[type="email"], 
+select, 
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 2px solid #3498db;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 14px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #2c3e50;
+    color: rgba(255, 255, 255,0.7);
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    font-size: 14px;
+}
+.info-banner {
+    max-width: 450px;  
+    width: 100%;       
+    height: auto;
+    border-radius: 8px;
+    display: block;    
+    margin: 15px auto; 
+}
+@media (max-width: 600px) {
+    main {
+        padding: 0 10px; 
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .section1, .section2 {
+        padding: 25px 15px; 
+        margin: 10px auto;
+        width: 100%;
+    }
+
+    table {
+        width:100%;
+        table-layout: fixed;
+    }
+}
