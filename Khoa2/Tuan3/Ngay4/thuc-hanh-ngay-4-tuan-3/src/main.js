@@ -21,8 +21,8 @@ const traCuuHoaDon=async (tuKhoa, kieuSapXep,trangHienTai,soHoaDonMoiTrang)=>{
         else if(kieuSapXep==='giam'){
             data.sort((a,b)=>b.tongTien-a.tongTien);
         }
-        const viTriBatDau=(trangHienTai-1)*soSPMoiTrang;
-        const viTriKetThuc=viTriBatDau+soSPMoiTrang;
+        const viTriBatDau=(trangHienTai-1)*soHoaDonMoiTrang;
+        const viTriKetThuc=viTriBatDau+soHoaDonMoiTrang;
         const duLieuDaPhanTrang=data.slice(viTriBatDau,viTriKetThuc);
         console.log(`Kết quả Trang ${trangHienTai}:`,duLieuDaPhanTrang);
     }catch(loi){
