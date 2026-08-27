@@ -1,0 +1,6 @@
+[
+    { "id": "HD01", "khachHang": "Nguyen Van A", "tongTien": 1500 },
+    { "id": "HD02", "khachHang": "Tran Thi B", "tongTien": 800 },
+    { "id": "HD03", "khachHang": "Le Van Nguyen", "tongTien": 2000 },
+    { "id": "HD04", "khachHang": "Nguyen Van D", "tongTien": 500 }
+]
