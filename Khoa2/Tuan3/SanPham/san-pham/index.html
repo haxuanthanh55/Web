@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tra cứu hồ sơ bệnh nhân</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <h1>Tra cứu Hồ sơ Bệnh nhân</h1>
+  <div class="controller">
+    <input type="text" id="search" placeholder="Nhập tên bệnh nhân">
+    <select id="sort">
+      <option value="tang">Viện phí: tăng dần</option>
+      <option value="giam">Viện phí: giảm dần</option>
+    </select>
+  </div>
+  <div id="trang-thai"></div>
+  <div id="du-lieu"></div>
+  <div class="phan-trang">
+    <button id="trang-truoc">Trang trước</button>
+    <span id="thong-tin">Trang 1</span>
+    <button id="trang-sau">Trang sau</button>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
