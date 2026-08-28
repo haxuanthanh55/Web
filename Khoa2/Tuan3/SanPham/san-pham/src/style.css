@@ -2,10 +2,10 @@
 }
 body {font-family: Arial, sans-serif;background-color: #f4f4f4;color: #333;padding: 20px;
 }
-h1 {text-align: center;color: #333;margin-bottom: 20px;font-size: 24px;
+h1 {text-align: center;color: white;background-color: #0066cc;padding: 15px;margin-bottom: 20px;font-size: 24px;
 }
 /* Khung chứa nội dung */
-.container {max-width: 600px;margin: 0 auto;background: #fff;padding: 20px;border: 1px solid #ddd;
+.container {max-width: 90%; margin: 0 auto; background: #fff; padding: 20px; border: 1px solid #ddd;
 }
 /* Thanh điều khiển */
 .controller {display: flex;gap: 10px;margin-bottom: 20px;
@@ -21,13 +21,9 @@ h1 {text-align: center;color: #333;margin-bottom: 20px;font-size: 24px;
 .trang-thai-error { color: #cc0000; font-weight: bold; }
 .trang-thai-empty { color: #666; font-style: italic; }
 /* Danh sách dữ liệu */
-#du-lieu {display: flex;flex-direction: column;gap: 10px;
+#du-lieu {display: flex;flex-direction: column;gap: 10px; margin-top: 10px;
 }
-.the-bn {display: flex;justify-content: space-between;align-items: center;padding: 12px 15px;border: 1px solid #e0e0e0;background-color: #fff;
-}
-.the-bn h3 {font-size: 15px;color: #222;
-}
-.the-bn p {font-size: 14px;color: #006600;font-weight: bold;
+.the-bn {display: grid;grid-template-columns: 80px 1fr 1fr 120px;align-items: center;border: 1px solid #ccc;background-color: #fff; border-radius: 4px;
 }
 /* Phân trang */
 .phan-trang {margin-top: 20px;display: flex;justify-content: center;align-items: center;gap: 15px;
@@ -38,3 +34,16 @@ h1 {text-align: center;color: #333;margin-bottom: 20px;font-size: 24px;
 }
 #thong-tin {font-size: 14px;
 }
+.tieu-de-cot {display: grid;grid-template-columns: 80px 1fr 1fr 120px;background-color: #eaeaea;font-weight: bold;border: 1px solid #ccc;border-bottom: none;
+}
+.tieu-de-cot > div {padding: 10px 15px;border-right: 1px solid #ccc;display: flex;align-items: center;justify-content: center;text-align: center;
+}
+.tieu-de-cot > div:last-child {border-right: none;
+}
+.the-bn > div {padding: 10px 15px;border-right: 1px solid #ccc;display: flex;align-items: center;}
+.the-bn > div:last-child {border-right: none;justify-content: center;}
+.cot-ma {justify-content: center;}
+.cot-vien-phi {justify-content: center;}
+.da-nop {color: #006600; font-weight: bold;}
+.chua-nop {color: #cc0000; font-weight: bold;}
+.cot-ten {justify-content: center;}

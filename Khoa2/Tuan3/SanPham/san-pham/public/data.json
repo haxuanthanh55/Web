@@ -1,14 +1,14 @@
 [
-    { "khachHang": "Lê Văn An", "tongTien": 450000 },
-    { "khachHang": "Trần Thị Bình", "tongTien": 1250000 },
-    { "khachHang": "Phạm Quang Cường", "tongTien": 300000 },
-    { "khachHang": "Nguyễn Mai Dung", "tongTien": 850000 },
-    { "khachHang": "Hoàng Văn Tuấn", "tongTien": 2000000 },
-    { "khachHang": "Vũ Thu Yến", "tongTien": 150000 },
-    { "khachHang": "Đinh Văn Hùng", "tongTien": 600000 },
-    { "khachHang": "Bùi Thị Lan", "tongTien": 1800000 },
-    { "khachHang": "Ngô Quang Huy", "tongTien": 500000 },
-    { "khachHang": "Lý Thu Thảo", "tongTien": 950000 },
-    { "khachHang": "Đỗ Khắc Tiệp", "tongTien": 1100000 },
-    { "khachHang": "Phan Thị Mai", "tongTien": 250000 }
+    { "maBN": "BN001", "khachHang": "Lê Văn An", "tongTien": 450000, "trangThai": "Chưa nộp" },
+    { "maBN": "BN002", "khachHang": "Trần Thị Bình", "tongTien": 1250000, "trangThai": "Đã nộp" },
+    { "maBN": "BN003", "khachHang": "Phạm Quang Cường", "tongTien": 300000, "trangThai": "Đã nộp" },
+    { "maBN": "BN004", "khachHang": "Nguyễn Mai Dung", "tongTien": 850000, "trangThai": "Chưa nộp" },
+    { "maBN": "BN005", "khachHang": "Hoàng Văn Tuấn", "tongTien": 2000000, "trangThai": "Đã nộp" },
+    { "maBN": "BN006", "khachHang": "Vũ Thu Yến", "tongTien": 150000, "trangThai": "Chưa nộp" },
+    { "maBN": "BN007", "khachHang": "Đinh Văn Hùng", "tongTien": 600000, "trangThai": "Đã nộp" },
+    { "maBN": "BN008", "khachHang": "Bùi Thị Lan", "tongTien": 1800000, "trangThai": "Chưa nộp" },
+    { "maBN": "BN009", "khachHang": "Ngô Quang Huy", "tongTien": 500000, "trangThai": "Đã nộp" },
+    { "maBN": "BN010", "khachHang": "Lý Thu Thảo", "tongTien": 950000, "trangThai": "Chưa nộp" },
+    { "maBN": "BN011", "khachHang": "Đỗ Khắc Tiệp", "tongTien": 1100000, "trangThai": "Đã nộp" },
+    { "maBN": "BN012", "khachHang": "Phan Thị Mai", "tongTien": 250000, "trangThai": "Chưa nộp" }
 ]

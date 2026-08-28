@@ -5,6 +5,7 @@ let trangHienTai=1;
 let tuKhoa='';
 let kieuSapXep='tang';
 let boDieuKhien;
+let trangThaiLoc='all';
 const traCuu=async()=>{
     if(boDieuKhien){
         boDieuKhien.abort();
@@ -14,7 +15,11 @@ const traCuu=async()=>{
         hienThiTrangThai("Loading");
         let data=await layDuLieu(boDieuKhien.signal);
         if(tuKhoa){
-            data=data.filter(e=>e.khachHang.toLowerCase().includes(tuKhoa.toLowerCase()));
+            data=data.filter(e=>e.khachHang.toLowerCase().includes(tuKhoa.toLowerCase())||
+        e.maBN.toLowerCase().includes(tuKhoa.toLowerCase()));
+        }
+        if(trangThaiLoc !== 'all') {
+            data = data.filter(e => e.trangThai === trangThaiLoc);
         }
         if(kieuSapXep==='tang'){
             data.sort((a,b)=>a.tongTien-b.tongTien);
@@ -58,9 +63,13 @@ document.querySelector("#trang-truoc").addEventListener("click", () => {
         traCuu();
     }
 });
-
 document.querySelector("#trang-sau").addEventListener("click", () => {
     trangHienTai++;
+    traCuu();
+});
+document.querySelector("#filter-status").addEventListener("change", (e) => {
+    trangThaiLoc = e.target.value;
+    trangHienTai = 1;
     traCuu();
 });
 traCuu();

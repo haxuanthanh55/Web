@@ -9,13 +9,24 @@
 <body>
   <h1>Tra cứu Hồ sơ Bệnh nhân</h1>
   <div class="controller">
-    <input type="text" id="search" placeholder="Nhập tên bệnh nhân">
+    <input type="text" id="search" placeholder="Nhập tên hoặc mã bệnh nhân">
+    <select id="filter-status">
+      <option value="all">Tất cả trạng thái</option>
+      <option value="Chưa nộp">Chưa nộp</option>
+      <option value="Đã nộp">Đã nộp</option>
+    </select>
     <select id="sort">
       <option value="tang">Viện phí: tăng dần</option>
       <option value="giam">Viện phí: giảm dần</option>
     </select>
   </div>
   <div id="trang-thai"></div>
+  <div class="tieu-de-cot">
+    <div>Mã BN</div>
+    <div>Tên bệnh nhân</div>
+    <div>Viện phí (VNĐ)</div>
+    <div>Trạng thái</div>
+  </div>
   <div id="du-lieu"></div>
   <div class="phan-trang">
     <button id="trang-truoc">Trang trước</button>
