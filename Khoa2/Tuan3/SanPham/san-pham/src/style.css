@@ -40,10 +40,21 @@ h1 {text-align: center;color: white;background-color: #0066cc;padding: 15px;marg
 }
 .tieu-de-cot > div:last-child {border-right: none;
 }
-.the-bn > div {padding: 10px 15px;border-right: 1px solid #ccc;display: flex;align-items: center;}
-.the-bn > div:last-child {border-right: none;justify-content: center;}
-.cot-ma {justify-content: center;}
-.cot-vien-phi {justify-content: center;}
-.da-nop {color: #006600; font-weight: bold;}
-.chua-nop {color: #cc0000; font-weight: bold;}
-.cot-ten {justify-content: center;}
+.the-bn > div {padding: 10px 15px;border-right: 1px solid #ccc;display: flex;align-items: center;
+}
+.the-bn > div:last-child {border-right: none;justify-content: center;
+}
+.cot-ma {justify-content: center;
+}
+.cot-vien-phi {justify-content: center;
+}
+.da-nop {color: #006600; font-weight: bold;
+}
+.chua-nop {color: #cc0000; font-weight: bold;
+}
+.cot-ten {justify-content: center;
+}
+#xoa-loc {padding: 8px 12px;border: 1px solid #ccc;border-radius: 4px;background-color: #f8f9fa;cursor: pointer;font-size: 14px;transition: background-color 0.2s ease;
+}
+#xoa-loc:hover {background-color: #e2e6ea;
+}

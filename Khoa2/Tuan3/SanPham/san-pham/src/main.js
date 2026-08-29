@@ -4,9 +4,10 @@ import { hienThiTrangThai,render } from "./ui.js";
 const slTrang=5; //max bn 1 trang
 let trangHienTai=1;
 let tuKhoa='';
-let kieuSapXep='tang';
+let kieuSapXep='mac-dinh';
 let boDieuKhien;//qly abortController
 let trangThaiLoc='all';//status đóng tiền
+
 const traCuu=async()=>{
     //huỷ request
     if(boDieuKhien){
@@ -29,8 +30,8 @@ const traCuu=async()=>{
         //sắp xếp
         if(kieuSapXep==='tang'){
             data.sort((a,b)=>a.tongTien-b.tongTien);
-        }else{
-            data.sort((a,b)=>b.tongTien-a.tongTien);
+        }else if (kieuSapXep === 'giam') {
+            data.sort((a, b) => b.tongTien - a.tongTien);
         }
         //phân trang
         const batDau=(trangHienTai-1)*slTrang;
@@ -87,3 +88,14 @@ document.querySelector("#filter-status").addEventListener("change", (e) => {
     traCuu();
 });
 traCuu();
+//xoá bộ lọc
+document.querySelector("#xoa-loc").addEventListener("click", () => {
+    tuKhoa = '';
+    kieuSapXep = 'mac-dinh';
+    trangThaiLoc = 'all';
+    trangHienTai = 1;
+    document.querySelector("#search").value = "";
+    document.querySelector("#sort").value = "mac-dinh";
+    document.querySelector("#filter-status").value = "all";
+    traCuu();
+});
