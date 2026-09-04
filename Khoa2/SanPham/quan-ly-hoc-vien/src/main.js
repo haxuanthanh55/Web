@@ -10,7 +10,7 @@ const khoiTao=async()=>{
         state.danhSach=duLieuGoc.map(e=>chuanHoaNghiepVu(e));
         renderTable(state.danhSach);
     }catch(error){
-        inTBaoLoi(error.massage);
+        inTBaoLoi(error.message);
     }
 }
 khoiTao();

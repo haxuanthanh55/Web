@@ -14,5 +14,9 @@ h1 {text-align: center;margin-bottom: 20px;color: #333;
 }
 .text-center {text-align: center;
 }
-.text-error {color: red;font-style: italic;
+.text-error {color: rgb(252, 4, 4);font-style: italic;
+}
+.canh-bao {background-color: #ffcccc;
+}
+.hocbong {color: rgb(4, 135, 4);font-weight: bold;font-size: 0.9em;
 }

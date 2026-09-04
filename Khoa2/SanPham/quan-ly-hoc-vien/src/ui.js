@@ -4,17 +4,35 @@ export const renderTable=(ds)=>{
         tbody.innerHTML=`<tr><td colspan="7" class="text-center">Không có dữ liệu</td></tr>`;
         return;
     }
-    tbody.innerHTML=ds.map(e=>`
-        <tr>
+    tbody.innerHTML=ds.map(e=>{
+        let canhBao='';
+        let hocBong='';
+        let haBac='';
+        let noMon='';
+        let hocPhi='Chưa đóng'
+        if(e.canhBao===true){
+            canhBao='canh-bao';
+            haBac='<br><span class="text-error">Hạ bậc</span>';
+            noMon='text-error';
+        }
+        if(e.hocBong===true){
+            hocBong='<br><span class="hocbong">Học bổng</span>';
+        }
+        if(e.daDongHocPhi===true){
+            hocPhi='Đã đóng';
+        }
+        return `
+        <tr class="${canhBao}">
             <td>${e.maSV}</td>
-            <td>${e.tenSV}</td>
+            <td>${e.tenSV} ${hocBong}</td>
             <td>${e.gpa}</td>
             <td>${e.cpa}</td>
-            <td>${e.daDongHocPhi? 'Đã đóng': 'Còn nợ'}</td>
-            <td>${e.phanTramNo}</td>
-            <td>${e.xepLoaiCuoi}</td>
-        </tr>`).join('');
+            <td>${hocPhi}</td>
+            <td class="${noMon}">${e.phanTramNo}</td>
+            <td>${e.xepLoaiCuoi} ${haBac}</td>
+        </tr>`
+    }).join('');
 }
 export const inTBaoLoi=(e)=>{
-    document.querySelector('hien-thi').innerHTML=`<tr><td colspan="7" class="text-center text-error">${e}</td></tr>`;
+    document.querySelector('#hien-thi').innerHTML=`<tr><td colspan="7" class="text-center text-error">${e}</td></tr>`;
 }
