@@ -45,8 +45,6 @@ const renderAll=()=>{
 
     if (state.sapXep === 'gpa-giam') {
         danhSachLoc.sort((a, b) => b.gpa - a.gpa);
-    } else if (state.sapXep === 'ten-az') {
-        danhSachLoc.sort((a, b) => a.tenSV.localeCompare(b.tenSV));
     }
     let tongSoTrang=parseInt(danhSachLoc.length/state.soLuong);
     let phanDu=danhSachLoc.length%state.soLuong;

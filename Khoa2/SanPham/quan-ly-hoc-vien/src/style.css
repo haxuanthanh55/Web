@@ -97,3 +97,57 @@ cursor: pointer;
 
 #btn-mo-modal {margin-left: auto; 
 }
+@media screen and (max-width: 768px) {
+    .container {width: 100%;padding: 15px;margin: 10px auto;border-radius: 0;border-left: none;border-right: none;
+    }
+    .tim-kiem {flex-direction: column;align-items: stretch;gap: 10px;
+    }
+    .tim-kiem input[type="text"], 
+    .tim-kiem select, 
+    #btn-search, 
+    #btn-xoa-loc {width: 100%;margin-left: 0 !important;
+    }
+    #btn-mo-modal {width: 100%;margin-left: 0 !important;text-align: center;
+    }
+    .table-ds {display: block;overflow-x: auto;white-space: nowrap;
+    }
+    .modal-chung {width: 90%;max-width: 350px;padding: 20px;
+    }
+}
+@media screen and (max-width: 480px) {
+    h1 {font-size: 20px;padding: 15px 10px;
+    }
+    .table-ds th, 
+    .table-ds td {padding: 10px 8px;font-size: 13px;
+    }
+    .btn-sua, .btn-xoa {padding: 4px 8px;font-size: 12px;
+    }
+}
+@media screen and (max-width: 768px) {
+    body, html {
+        overflow-x: hidden;
+    }
+    .container {
+        width: 100% !important;
+        padding: 8px !important;
+        margin: 0 !important;
+    }
+    .table-ds th:nth-child(4), 
+    .table-ds td:nth-child(4),
+    .table-ds th:nth-child(6), 
+    .table-ds td:nth-child(6),
+    .table-ds th:nth-child(7), 
+    .table-ds td:nth-child(7) {
+        display: none !important;
+    }
+    .table-ds th, 
+    .table-ds td {
+        padding: 6px 2px !important;
+        font-size: 11px !important;
+    }
+    .btn-sua, .btn-xoa {
+        padding: 3px 5px !important;
+        font-size: 10px !important;
+        margin-right: 1px !important;
+    }
+}
