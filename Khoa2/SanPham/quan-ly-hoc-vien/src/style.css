@@ -39,3 +39,41 @@ h1 {text-align: center;margin-bottom: 20px;color: #333;
 }
 #loading {display: none;color: blue;font-style: italic;margin: 15px 0;text-align: center;
 }
+.btn-them {margin-bottom: 15px;padding: 8px 15px;cursor: pointer;background-color: #007bff;color: white;border: none;border-radius: 4px;font-weight: bold;
+}
+.btn-them:hover {background-color: #0056b3;
+}
+.modal-chung {padding: 20px;border-radius: 8px;border: 1px solid #ccc;width: 350px;background: #fff;
+}
+.modal-chung h3 {margin-top: 0;margin-bottom: 15px;color: #333;
+}    
+.modal-field {margin-bottom: 12px;
+}
+.modal-field input[type="text"],
+.modal-field input[type="number"] {width: 100%;padding: 6px 8px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 4px;
+}
+.modal-actions {text-align: right;margin-top: 15px;
+}
+.btn-huy {padding: 6px 12px;margin-right: 5px;cursor: pointer;background: #e0e0e0;border: none;border-radius: 4px;
+}
+.btn-luu {padding: 6px 12px;background: #28a745;color: white;border: none;border-radius: 4px;cursor: pointer;
+}
+.btn-sua {padding: 4px 8px;cursor: pointer;background: #ffc107;border: none;border-radius: 3px;margin-right: 4px;
+}
+.btn-xoa {padding: 4px 8px;background: #dc3545;color: white;border: none;border-radius: 3px;
+cursor: pointer;
+}
+.modal-chung {
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 350px;
+    background: #fff;
+    margin: auto; /* Ép popup ra chính giữa màn hình */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Thêm chút bóng đổ cho nổi bật */
+}
+
+/* Hiệu ứng làm tối nền giao diện khi popup mở */
+.modal-chung::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); 
+}

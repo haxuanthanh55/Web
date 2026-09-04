@@ -1,7 +1,7 @@
 export const renderTable=(ds)=>{
     const tbody=document.querySelector('#hien-thi');
     if(ds.length===0){
-        tbody.innerHTML=`<tr><td colspan="7" class="text-center">Không có dữ liệu</td></tr>`;
+        tbody.innerHTML=`<tr><td colspan="8" class="text-center">Không có dữ liệu</td></tr>`;
         return;
     }
     tbody.innerHTML=ds.map(e=>{
@@ -30,11 +30,15 @@ export const renderTable=(ds)=>{
             <td>${hocPhi}</td>
             <td class="${noMon}">${e.phanTramNo}</td>
             <td>${e.xepLoaiCuoi} ${haBac}</td>
+            <td class="cot-chuc-nang">
+                <button class="btn-sua" data-masv="${e.maSV}">Sửa</button>
+                <button class="btn-xoa" data-masv="${e.maSV}">Xóa</button>
+            </td>
         </tr>`
     }).join('');
 }
 export const inTBaoLoi=(e)=>{
-    document.querySelector('#hien-thi').innerHTML=`<tr><td colspan="7" class="text-center text-error">${e}</td></tr>`;
+    document.querySelector('#hien-thi').innerHTML=`<tr><td colspan="8" class="text-center text-error">${e}</td></tr>`;
 }
 export const renderPhanTrang=(tongSoTrang, trangHienTai)=>{
     const container=document.querySelector('#phan-trang');

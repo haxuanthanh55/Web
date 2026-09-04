@@ -41,12 +41,111 @@ const renderAll=()=>{
         });
     });
 };
-const nutTim = document.querySelector('#btn-search');
-if (nutTim) {
-    nutTim.addEventListener('click', () => {
-        state.tuKhoa = document.querySelector('#o-tim-kiem').value.trim();
-        state.trangHienTai = 1; 
-        renderAll();
+const oTimKiem = document.querySelector('#o-tim-kiem');
+let thoiGianCho = null;
+if (oTimKiem) {
+    oTimKiem.addEventListener('input', (event) => {
+        hienThiLoading(true);
+        clearTimeout(thoiGianCho);
+        thoiGianCho = setTimeout(() => {
+            state.tuKhoa = event.target.value.trim();
+            state.trangHienTai = 1;
+            renderAll(); 
+            hienThiLoading(false);
+        }, 800);
     });
 }
 khoiTao();
+const modal = document.querySelector('#modal-sv');
+const btnMoModal = document.querySelector('#btn-mo-modal');
+const btnDongModal = document.querySelector('#btn-dong-modal');
+const editIndexInput = document.querySelector('#edit-index');
+const modalTitle = document.querySelector('#modal-title');
+if (btnMoModal) {
+    btnMoModal.addEventListener('click', () => {
+        modalTitle.innerText = "Thêm sinh viên mới";
+        editIndexInput.value = "-1";
+        document.querySelector('#them-maSV').value = '';
+        document.querySelector('#them-tenSV').value = '';
+        document.querySelector('#them-gpa').value = '';
+        document.querySelector('#them-cpa').value = '';
+        document.querySelector('#them-phanTramNo').value = '';
+        document.querySelector('#them-renLuyen').value = '';
+        document.querySelector('#them-hocPhi').checked = false;
+        modal.showModal();
+    });
+}
+if (btnDongModal) {
+    btnDongModal.addEventListener('click', () => {
+        modal.close(); 
+    });
+}
+const nutLuuThem = document.querySelector('#btn-luu-them');
+if (nutLuuThem) {
+    nutLuuThem.addEventListener('click', () => {
+        const maSV = document.querySelector('#them-maSV').value.trim();
+        const tenSV = document.querySelector('#them-tenSV').value.trim();
+        const gpa = parseFloat(document.querySelector('#them-gpa').value) || 0;
+        const cpa = parseFloat(document.querySelector('#them-cpa').value) || 0;
+        const phanTramNo = parseFloat(document.querySelector('#them-phanTramNo').value) || 0;
+        const renLuyen = parseFloat(document.querySelector('#them-renLuyen').value) || 0;
+        const daDongHocPhi = document.querySelector('#them-hocPhi').checked;
+        if (!maSV || !tenSV) {
+            alert('Mã SV và Họ tên không được để trống!');
+            return;
+        }
+        const svData = { maSV, tenSV, gpa, cpa, phanTramNo, renLuyen, daDongHocPhi };
+        const svChuanHoa = chuanHoaNghiepVu(svData);
+        const indexSua = parseInt(editIndexInput.value);
+        if (indexSua === -1) {
+            state.danhSach.unshift(svChuanHoa); 
+        } else {
+            state.danhSach[indexSua] = svChuanHoa; 
+        }
+        modal.close();
+        state.trangHienTai = 1;
+        renderAll();
+    });
+}
+const tbody = document.querySelector('#hien-thi');
+if (tbody) {
+    tbody.addEventListener('click', (event) => {
+        const btn = event.target;
+        const maSV = btn.dataset.masv; 
+        if (btn.classList.contains('btn-xoa')) {
+            maSVDangChonDeXoa = maSV; 
+            xoaMaSVText.innerText = maSV; 
+        }
+        if (btn.classList.contains('btn-sua')) {
+            const index = state.danhSach.findIndex(e => e.maSV === maSV);
+            if (index !== -1) {
+                const sv = state.danhSach[index];
+                modalTitle.innerText = "Chỉnh sửa thông tin";
+                editIndexInput.value = index; 
+                document.querySelector('#them-maSV').value = sv.maSV;
+                document.querySelector('#them-tenSV').value = sv.tenSV;
+                document.querySelector('#them-gpa').value = sv.gpa;
+                document.querySelector('#them-cpa').value = sv.cpa;
+                document.querySelector('#them-phanTramNo').value = sv.phanTramNo;
+                document.querySelector('#them-renLuyen').value = sv.renLuyen;
+                document.querySelector('#them-hocPhi').checked = sv.daDongHocPhi;
+                modal.showModal();
+            }
+        }
+    });
+}
+const modalXoa = document.querySelector('#modal-xoa');
+const btnDongXoa = document.querySelector('#btn-dong-xoa');
+const btnXacNhanXoa = document.querySelector('#btn-xac-nhan-xoa');
+const xoaMaSVText = document.querySelector('#xoa-masv-text');
+let maSVDangChonDeXoa = ''; 
+if (btnDongXoa) {
+    btnDongXoa.addEventListener('click', () => modalXoa.close());
+}
+if (btnXacNhanXoa) {
+    btnXacNhanXoa.addEventListener('click', () => {
+        state.danhSach = state.danhSach.filter(e => e.maSV !== maSVDangChonDeXoa);
+        modalXoa.close();
+        renderAll();
+    });
+}

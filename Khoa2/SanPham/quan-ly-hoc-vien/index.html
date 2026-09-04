@@ -13,6 +13,31 @@
             <input type="text" id="o-tim-kiem" placeholder="Nhập tên hoặc mã SV">
             <button id="btn-search">Tìm kiếm</button>
         </div>
+        <button id="btn-mo-modal" class="btn-them">Thêm sinh viên</button>
+        <dialog id="modal-sv" class="modal-chung">
+            <h3 id="modal-title">Thêm sinh viên mới</h3>
+            <input type="hidden" id="edit-index" value="-1">
+            <div class="modal-field"><input type="text" id="them-maSV" placeholder="Mã SV"></div>
+            <div class="modal-field"><input type="text" id="them-tenSV" placeholder="Họ và tên"></div>
+            <div class="modal-field"><input type="number" step="0.1" id="them-gpa" placeholder="GPA"></div>
+            <div class="modal-field"><input type="number" step="0.1" id="them-cpa" placeholder="CPA"></div>
+            <div class="modal-field"><input type="number" id="them-phanTramNo" placeholder="% Nợ môn"></div>
+            <div class="modal-field"><input type="number" id="them-renLuyen" placeholder="Điểm rèn luyện"></div>
+            <div class="modal-field"><label><input type="checkbox" id="them-hocPhi"> Đã đóng học phí</label></div>
+            <div class="modal-actions">
+                <button id="btn-dong-modal" type="button" class="btn-huy">Hủy</button>
+                <button id="btn-luu-them" class="btn-luu">Lưu</button>
+            </div>
+        </dialog>
+        <dialog id="modal-xoa" class="modal-chung">
+            <h3 style="color: #dc3545; margin-top: 0;">Xác nhận xóa</h3>
+            <p>Bạn có chắc chắn muốn xóa sinh viên mã <strong id="xoa-masv-text"></strong>?</p>
+            
+            <div class="modal-actions">
+                <button id="btn-dong-xoa" type="button" class="btn-huy">Hủy</button>
+                <button id="btn-xac-nhan-xoa" class="btn-xoa" style="padding: 6px 12px; cursor: pointer;">Xóa</button>
+            </div>
+        </dialog>
         <div id="loading">Đang tải dữ liệu...</div>
         <table class="table-ds">
             <thead>
@@ -24,6 +49,7 @@
                 <th>Học phí</th>
                 <th>Nợ môn</th>
                 <th>Xếp loại</th>
+                <th class="cot-chuc-nang">Chức năng</th>
             </tr>
         </thead>
         <tbody id="hien-thi">
