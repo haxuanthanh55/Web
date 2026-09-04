@@ -1,14 +1,22 @@
 import { fetchDuLieu } from "./api.js";
 import { chuanHoaNghiepVu,duLieuTrang} from "./service.js";
 import { renderTable,inTBaoLoi ,renderPhanTrang, hienThiLoading} from "./ui.js";
+import { kiemTraHopLe } from "./validation.js";
+import { luuVaoBoNho, docTuBoNho } from "./utils.js";
 let state={
     danhSach:[],trangHienTai:1,soLuong:8,tuKhoa:''
 }
 const khoiTao=async()=>{
     try{
         hienThiLoading(true);
-        const duLieuGoc=await fetchDuLieu();
-        state.danhSach=duLieuGoc.map(e=>chuanHoaNghiepVu(e));
+        const dataCu = docTuBoNho('danhSachSV');
+        if (dataCu) {
+            state.danhSach = dataCu;
+        } else {
+            const duLieuGoc = await fetchDuLieu();
+            state.danhSach = duLieuGoc.map(e => chuanHoaNghiepVu(e));
+            luuVaoBoNho('danhSachSV', state.danhSach);
+        }
         hienThiLoading(false);
         renderAll();
     }catch(error){
@@ -90,11 +98,8 @@ if (nutLuuThem) {
         const phanTramNo = parseFloat(document.querySelector('#them-phanTramNo').value) || 0;
         const renLuyen = parseFloat(document.querySelector('#them-renLuyen').value) || 0;
         const daDongHocPhi = document.querySelector('#them-hocPhi').checked;
-        if (!maSV || !tenSV) {
-            alert('Mã SV và Họ tên không được để trống!');
-            return;
-        }
         const svData = { maSV, tenSV, gpa, cpa, phanTramNo, renLuyen, daDongHocPhi };
+        if (!kiemTraHopLe(svData)) return;
         const svChuanHoa = chuanHoaNghiepVu(svData);
         const indexSua = parseInt(editIndexInput.value);
         if (indexSua === -1) {
@@ -102,11 +107,17 @@ if (nutLuuThem) {
         } else {
             state.danhSach[indexSua] = svChuanHoa; 
         }
+        luuVaoBoNho('danhSachSV', state.danhSach);
         modal.close();
         state.trangHienTai = 1;
         renderAll();
     });
 }
+const modalXoa = document.querySelector('#modal-xoa');
+const btnDongXoa = document.querySelector('#btn-dong-xoa');
+const btnXacNhanXoa = document.querySelector('#btn-xac-nhan-xoa');
+const xoaMaSVText = document.querySelector('#xoa-masv-text');
+let maSVDangChonDeXoa = ''; 
 const tbody = document.querySelector('#hien-thi');
 if (tbody) {
     tbody.addEventListener('click', (event) => {
@@ -115,6 +126,7 @@ if (tbody) {
         if (btn.classList.contains('btn-xoa')) {
             maSVDangChonDeXoa = maSV; 
             xoaMaSVText.innerText = maSV; 
+            modalXoa.showModal(); 
         }
         if (btn.classList.contains('btn-sua')) {
             const index = state.danhSach.findIndex(e => e.maSV === maSV);
@@ -134,17 +146,13 @@ if (tbody) {
         }
     });
 }
-const modalXoa = document.querySelector('#modal-xoa');
-const btnDongXoa = document.querySelector('#btn-dong-xoa');
-const btnXacNhanXoa = document.querySelector('#btn-xac-nhan-xoa');
-const xoaMaSVText = document.querySelector('#xoa-masv-text');
-let maSVDangChonDeXoa = ''; 
 if (btnDongXoa) {
     btnDongXoa.addEventListener('click', () => modalXoa.close());
 }
 if (btnXacNhanXoa) {
     btnXacNhanXoa.addEventListener('click', () => {
         state.danhSach = state.danhSach.filter(e => e.maSV !== maSVDangChonDeXoa);
+        luuVaoBoNho('danhSachSV', state.danhSach);
         modalXoa.close();
         renderAll();
     });
