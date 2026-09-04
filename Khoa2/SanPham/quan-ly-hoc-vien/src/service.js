@@ -21,3 +21,8 @@ export const chuanHoaNghiepVu=(e)=>{
     }
     return {...e,xepLoaiCuoi,canhBao,hocBong};
 }
+export const duLieuTrang=(danhSach, trangHienTai, soLuong)=>{
+    const batDau=(trangHienTai-1)*soLuong;
+    const ketThuc=batDau+soLuong;
+    return danhSach.slice(batDau,ketThuc);
+}

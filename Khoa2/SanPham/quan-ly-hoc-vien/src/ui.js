@@ -36,3 +36,16 @@ export const renderTable=(ds)=>{
 export const inTBaoLoi=(e)=>{
     document.querySelector('#hien-thi').innerHTML=`<tr><td colspan="7" class="text-center text-error">${e}</td></tr>`;
 }
+export const renderPhanTrang=(tongSoTrang, trangHienTai)=>{
+    const container=document.querySelector('#phan-trang');
+    if(!container)return;
+    let html='';
+    for(let i=1;i<=tongSoTrang;i++){
+        let classHienTai='';
+        if(i===trangHienTai){
+            classHienTai='btn-active';
+        }
+        html+=`<button class="btn-trang ${classHienTai}" data-trang="${i}">${i}</button> `;
+    }
+    container.innerHTML=html;
+}
