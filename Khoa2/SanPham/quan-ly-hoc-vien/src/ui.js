@@ -49,3 +49,16 @@ export const renderPhanTrang=(tongSoTrang, trangHienTai)=>{
     }
     container.innerHTML=html;
 }
+export const hienThiLoading = (dangTai) => {
+    const loading = document.querySelector('#loading');
+    const bang = document.querySelector('.table-ds');
+    if (loading && bang) {
+        if (dangTai === true) {
+            loading.style.display = 'block';
+            bang.style.display = 'none';
+        } else {
+            loading.style.display = 'none';
+            bang.style.display = 'table';
+        }
+    }
+};

@@ -37,3 +37,5 @@ h1 {text-align: center;margin-bottom: 20px;color: #333;
 }
 .btn-active {background-color: #333;color: #fff;font-weight: bold;
 }
+#loading {display: none;color: blue;font-style: italic;margin: 15px 0;text-align: center;
+}
