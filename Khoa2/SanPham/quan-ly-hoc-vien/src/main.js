@@ -4,7 +4,9 @@ import { renderTable,inTBaoLoi ,renderPhanTrang, hienThiLoading} from "./ui.js";
 import { kiemTraHopLe } from "./validation.js";
 import { luuVaoBoNho, docTuBoNho } from "./utils.js";
 let state={
-    danhSach:[],trangHienTai:1,soLuong:8,tuKhoa:''
+    danhSach:[],trangHienTai:1,soLuong:8,tuKhoa:'',
+    loaiLoc: 'tat-ca',
+    sapXep: 'mac-dinh'
 }
 const khoiTao=async()=>{
     try{
@@ -32,6 +34,19 @@ const renderAll=()=>{
             e.tenSV.toLowerCase().includes(tuKhoaThuong) || 
             e.maSV.toLowerCase().includes(tuKhoaThuong)
         );
+    }
+    if (state.loaiLoc === 'hoc-bong') {
+        danhSachLoc = danhSachLoc.filter(e => e.gpa >= 3.2 && e.phanTramNo === 0);
+    } else if (state.loaiLoc === 'no-mon') {
+        danhSachLoc = danhSachLoc.filter(e => e.phanTramNo > 0);
+    } else if (state.loaiLoc === 'chua-dong-tien') {
+        danhSachLoc = danhSachLoc.filter(e => e.daDongHocPhi === false);
+    }
+
+    if (state.sapXep === 'gpa-giam') {
+        danhSachLoc.sort((a, b) => b.gpa - a.gpa);
+    } else if (state.sapXep === 'ten-az') {
+        danhSachLoc.sort((a, b) => a.tenSV.localeCompare(b.tenSV));
     }
     let tongSoTrang=parseInt(danhSachLoc.length/state.soLuong);
     let phanDu=danhSachLoc.length%state.soLuong;
@@ -154,6 +169,35 @@ if (btnXacNhanXoa) {
         state.danhSach = state.danhSach.filter(e => e.maSV !== maSVDangChonDeXoa);
         luuVaoBoNho('danhSachSV', state.danhSach);
         modalXoa.close();
+        renderAll();
+    });
+}
+const oLoc = document.querySelector('#o-loc');
+const oSapXep = document.querySelector('#o-sap-xep');
+const btnXoaLoc = document.querySelector('#btn-xoa-loc');
+if (oLoc) {
+    oLoc.addEventListener('change', (event) => {
+        state.loaiLoc = event.target.value;
+        state.trangHienTai = 1;
+        renderAll();
+    });
+}
+if (oSapXep) {
+    oSapXep.addEventListener('change', (event) => {
+        state.sapXep = event.target.value;
+        state.trangHienTai = 1;
+        renderAll();
+    });
+}
+if (btnXoaLoc) {
+    btnXoaLoc.addEventListener('click', () => {
+        state.tuKhoa = '';
+        state.loaiLoc = 'tat-ca';
+        state.sapXep = 'mac-dinh';
+        state.trangHienTai = 1;
+        if (oTimKiem) oTimKiem.value = '';
+        if (oLoc) oLoc.value = 'tat-ca';
+        if (oSapXep) oSapXep.value = 'mac-dinh';
         renderAll();
     });
 }

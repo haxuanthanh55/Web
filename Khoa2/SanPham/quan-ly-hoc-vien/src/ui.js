@@ -29,6 +29,7 @@ export const renderTable=(ds)=>{
             <td>${e.cpa}</td>
             <td>${hocPhi}</td>
             <td class="${noMon}">${e.phanTramNo}</td>
+            <td>${e.renLuyen}</td>
             <td>${e.xepLoaiCuoi} ${haBac}</td>
             <td class="cot-chuc-nang">
                 <button class="btn-sua" data-masv="${e.maSV}">Sửa</button>

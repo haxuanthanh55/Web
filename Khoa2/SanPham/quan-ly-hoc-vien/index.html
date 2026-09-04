@@ -12,6 +12,18 @@
         <div class="tim-kiem">
             <input type="text" id="o-tim-kiem" placeholder="Nhập tên hoặc mã SV">
             <button id="btn-search">Tìm kiếm</button>
+            <select id="o-loc">
+                <option value="tat-ca">Tất cả</option>
+                <option value="hoc-bong">Đạt học bổng</option>
+                <option value="no-mon">Đang nợ môn</option>
+                <option value="chua-dong-tien">Chưa đóng học phí</option>
+            </select>
+            <select id="o-sap-xep">
+                <option value="mac-dinh">Sắp xếp mặc định</option>
+                <option value="gpa-giam">GPA Giảm dần</option>
+                <option value="ten-az">Tên A-Z</option>
+            </select>
+        <button id="btn-xoa-loc" class="btn-huy">Xóa bộ lọc</button>
         </div>
         <button id="btn-mo-modal" class="btn-them">Thêm sinh viên</button>
         <dialog id="modal-sv" class="modal-chung">
@@ -47,7 +59,8 @@
                 <th>GPA</th>
                 <th>CPA</th>
                 <th>Học phí</th>
-                <th>Nợ môn</th>
+                <th>Nợ môn(%)</th>
+                <th>Điểm rèn luyện</th>
                 <th>Xếp loại</th>
                 <th class="cot-chuc-nang">Chức năng</th>
             </tr>

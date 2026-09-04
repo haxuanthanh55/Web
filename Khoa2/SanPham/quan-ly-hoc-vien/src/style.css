@@ -1,16 +1,32 @@
 * {box-sizing: border-box;margin: 0;padding: 0;
 }
-body {font-family: Arial, sans-serif;background-color: #f4f4f4;padding: 20px;
+body {font-family: Arial, sans-serif;background-color: #f4f4f4;padding: 0;margin: 0;
 }
-.container {width: 90%;margin: 0 auto;background-color: #ffffff;padding: 20px;border: 1px solid #ccc;
+h1 {background-color: #1e293b;color: #ffffff;padding: 20px;text-align: center;font-size: 24px;margin-bottom: 25px;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
-h1 {text-align: center;margin-bottom: 20px;color: #333;
+.container {width: 96%;max-width: 1400px;margin: 20px auto;background-color: #ffffff;padding: 25px;border: 1px solid #ccc;border-radius: 8px;
 }
-.table-ds {width: 100%;border-collapse: collapse;margin-top: 10px;
+ble-ds {width: 100%;border-collapse: collapse;margin-top: 10px;
 }
-.table-ds th, .table-ds td {border: 1px solid #666;padding: 10px;text-align: center; 
+.table-ds {width: 100%;border-collapse: separate;border-spacing: 0 10px;background: transparent;margin-top: 10px;
 }
-.table-ds th {background-color: #e0e0e0; font-weight: bold;
+.table-ds thead tr {background-color: #334155;color: #ffffff;
+}
+.table-ds th {padding: 14px 10px;font-weight: bold;text-align: center;border: none;
+}
+.table-ds th:first-child { border-top-left-radius: 6px; border-bottom-left-radius: 6px; 
+}
+.table-ds th:last-child { border-top-right-radius: 6px; border-bottom-right-radius: 6px; 
+}
+.table-ds tbody tr {background-color: #ffffff;box-shadow: 0 2px 4px rgba(0,0,0,0.04);border-radius: 6px;transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.table-ds tbody tr:hover {transform: translateY(-1px);box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.table-ds td {padding: 12px 10px;font-size: 14px;text-align: center;border-top: 1px solid #f1f5f9;border-bottom: 1px solid #f1f5f9;border-left: none;border-right: none;
+}
+.table-ds tbody td:first-child {border-left: 1px solid #f1f5f9;border-top-left-radius: 6px;border-bottom-left-radius: 6px;font-weight: bold;color: #0f172a;
+}
+.table-ds tbody td:last-child {border-right: 1px solid #f1f5f9;border-top-right-radius: 6px;border-bottom-right-radius: 6px;
 }
 .text-center {text-align: center;
 }
@@ -63,17 +79,21 @@ h1 {text-align: center;margin-bottom: 20px;color: #333;
 .btn-xoa {padding: 4px 8px;background: #dc3545;color: white;border: none;border-radius: 3px;
 cursor: pointer;
 }
-.modal-chung {
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 350px;
-    background: #fff;
-    margin: auto; /* Ép popup ra chính giữa màn hình */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Thêm chút bóng đổ cho nổi bật */
+.modal-chung {padding: 20px;border-radius: 8px;border: 1px solid #ccc;width: 350px;background: #fff;margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.modal-chung::backdrop {background-color: rgba(0, 0, 0, 0.5); 
+}
+#o-loc, 
+#o-sap-xep {padding: 6px 10px;margin-left: 10px;border: 1px solid #ccc;border-radius: 4px;background-color: #fff;
+}
+#btn-xoa-loc {margin-left: 10px;
+}
+.tim-kiem {display: flex;align-items: center;gap: 12px;background: #f8fafc;padding: 15px;border-radius: 8px;border: 1px solid #e2e8f0;margin-bottom: 20px;flex-wrap: wrap;
+}
+.tim-kiem input[type="text"] {flex: 1;min-width: 220px;padding: 9px 12px;border: 1px solid #cbd5e1;border-radius: 4px;
+}
+#btn-search {padding: 9px 16px;background-color: #3b82f6;color: white;border: none;border-radius: 4px;font-weight: bold;cursor: pointer;
 }
 
-/* Hiệu ứng làm tối nền giao diện khi popup mở */
-.modal-chung::backdrop {
-    background-color: rgba(0, 0, 0, 0.5); 
+#btn-mo-modal {margin-left: auto; 
 }
